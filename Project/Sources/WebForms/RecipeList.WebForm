@@ -1,0 +1,1038 @@
+{
+	"metadata": {
+		"v": "1.0",
+		"datasources": [],
+		"styles": [
+			{
+				"name": "selectedItem",
+				"content": "self .virtualizer-list .virtualizer-item.selected {\n\tbackground-color: transparent;\n  }",
+				"parentId": null,
+				"id": "f3tQstq0fGpNXp-oVzKp1"
+			}
+		]
+	},
+	"components": {
+		"ROOT": {
+			"type": {
+				"resolvedName": "Container"
+			},
+			"isCanvas": true,
+			"props": {
+				"classNames": [],
+				"events": [],
+				"airyMode": false,
+				"className": "bg-white h-full w-full px-6"
+			},
+			"displayName": "Page",
+			"custom": {},
+			"parent": "",
+			"hidden": false,
+			"nodes": [
+				"2F03vinjq_",
+				"KkH_3-aJEL",
+				"Ha-3GWUasn"
+			],
+			"linkedNodes": {}
+		},
+		"KkH_3-aJEL": {
+			"type": {
+				"resolvedName": "Virtualizer"
+			},
+			"isCanvas": false,
+			"props": {
+				"iterable": true,
+				"orientation": "grid",
+				"classNames": [
+					"selectedItem"
+				],
+				"events": [],
+				"style": {
+					"height": "100%",
+					"width": "100%",
+					"minHeight": "auto",
+					"display": "flex",
+					"flexWrap": "wrap"
+				},
+				"datasource": "CurrentRecip:RecipesList",
+				"currentElement": "CurrentRecip:currentRecipe",
+				"iterator": "$content",
+				"styleboxWidth": "316px"
+			},
+			"displayName": "Virtualizer",
+			"custom": {},
+			"parent": "ROOT",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {
+				"element": "ExPavjYCpv"
+			}
+		},
+		"ExPavjYCpv": {
+			"type": {
+				"resolvedName": "StyleBox"
+			},
+			"isCanvas": true,
+			"props": {
+				"events": [],
+				"style": {
+					"width": "316px",
+					"height": "fit-content",
+					"minWidth": "316px",
+					"minHeight": "auto"
+				},
+				"role": "element",
+				"deletable": false,
+				"iterableChild": true
+			},
+			"displayName": "Stylebox",
+			"custom": {},
+			"parent": "KkH_3-aJEL",
+			"hidden": false,
+			"nodes": [
+				"69wlcGW3WH"
+			],
+			"linkedNodes": {}
+		},
+		"69wlcGW3WH": {
+			"type": {
+				"resolvedName": "StyleBox"
+			},
+			"isCanvas": true,
+			"props": {
+				"events": [],
+				"style": {
+					"display": "flex",
+					"flexDirection": "column",
+					"width": "300px",
+					"gap": "0px",
+					"justifyContent": "flex-start",
+					"alignItems": "center",
+					"borderRadius": "12px",
+					"borderWidth": "1px",
+					"borderColor": "#d5d4d4ff",
+					"paddingTop": "0px",
+					"paddingRight": "0px",
+					"paddingBottom": "0px",
+					"paddingLeft": "0px",
+					"height": "fit-content",
+					"minWidth": "300px",
+					"maxWidth": "300px",
+					"backgroundColor": "#ffffffff",
+					"marginTop": "8px",
+					"marginRight": "8px",
+					"marginBottom": "8px",
+					"marginLeft": "8px"
+				},
+				"iterableChild": true
+			},
+			"displayName": "Stylebox",
+			"custom": {},
+			"parent": "ExPavjYCpv",
+			"hidden": false,
+			"nodes": [
+				"IzOKm7sTGe",
+				"jZ-rIJrsX4"
+			],
+			"linkedNodes": {}
+		},
+		"IzOKm7sTGe": {
+			"type": {
+				"resolvedName": "Image"
+			},
+			"isCanvas": false,
+			"props": {
+				"classNames": [],
+				"events": [],
+				"style": {
+					"height": "250px",
+					"width": "300px",
+					"minWidth": "100%",
+					"minHeight": "60px",
+					"maxHeight": "100%",
+					"borderTopLeftRadius": "12px",
+					"borderTopRightRadius": "12px",
+					"display": "flex",
+					"flexDirection": "column",
+					"marginTop": "0px",
+					"marginBottom": "0px"
+				},
+				"imgSrc": "",
+				"datasource": "CurrentRecip:$content.Photo"
+			},
+			"displayName": "Image",
+			"custom": {},
+			"parent": "69wlcGW3WH",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"jZ-rIJrsX4": {
+			"type": {
+				"resolvedName": "StyleBox"
+			},
+			"isCanvas": true,
+			"props": {
+				"events": [],
+				"style": {
+					"paddingTop": "0px",
+					"paddingRight": "0px",
+					"paddingBottom": "0px",
+					"paddingLeft": "0px",
+					"marginRight": "0px",
+					"marginBottom": "0px",
+					"marginTop": "0px",
+					"marginLeft": "0px"
+				},
+				"iterableChild": true
+			},
+			"displayName": "Stylebox",
+			"custom": {},
+			"parent": "69wlcGW3WH",
+			"hidden": false,
+			"nodes": [
+				"7ZeIcoG2iR",
+				"cSLgfjZllT",
+				"EI9x0os_oL"
+			],
+			"linkedNodes": {}
+		},
+		"7ZeIcoG2iR": {
+			"type": {
+				"resolvedName": "StyleBox"
+			},
+			"isCanvas": true,
+			"props": {
+				"events": [],
+				"style": {
+					"display": "flex",
+					"flexDirection": "row",
+					"paddingTop": "0px",
+					"paddingRight": "0px",
+					"paddingBottom": "0px",
+					"paddingLeft": "0px",
+					"marginRight": "2px",
+					"marginBottom": "2px",
+					"marginTop": "2px",
+					"marginLeft": "2px"
+				},
+				"iterableChild": true
+			},
+			"displayName": "Stylebox",
+			"custom": {},
+			"parent": "jZ-rIJrsX4",
+			"hidden": false,
+			"nodes": [
+				"5mu5ZCXX8Q",
+				"9fpFEroShg"
+			],
+			"linkedNodes": {}
+		},
+		"5mu5ZCXX8Q": {
+			"type": {
+				"resolvedName": "StyleBox"
+			},
+			"isCanvas": true,
+			"props": {
+				"events": [],
+				"style": {
+					"width": "70%",
+					"fontSize": "14px",
+					"display": "flex",
+					"flexDirection": "column",
+					"paddingRight": "0px",
+					"paddingBottom": "0px",
+					"paddingTop": "0px",
+					"paddingLeft": "0px",
+					"marginRight": "12px",
+					"marginBottom": "12px",
+					"marginTop": "12px",
+					"marginLeft": "12px"
+				},
+				"iterableChild": true
+			},
+			"displayName": "Stylebox",
+			"custom": {},
+			"parent": "7ZeIcoG2iR",
+			"hidden": false,
+			"nodes": [
+				"4ni9qHHS5s",
+				"mCDdFFl7rQ"
+			],
+			"linkedNodes": {}
+		},
+		"4ni9qHHS5s": {
+			"type": {
+				"resolvedName": "Text"
+			},
+			"isCanvas": false,
+			"props": {
+				"events": [],
+				"doc": [
+					{
+						"type": "paragraph",
+						"children": [
+							{
+								"text": ""
+							},
+							{
+								"type": "datasource",
+								"datasource": "CurrentRecip:$content.Category",
+								"children": [
+									{
+										"text": "Category",
+										"bold": false,
+										"italic": false,
+										"underlined": false,
+										"strikethrough": false
+									}
+								],
+								"dsType": "string",
+								"format": "l"
+							},
+							{
+								"text": ""
+							}
+						]
+					}
+				],
+				"datasource": "CurrentRecip:$content.Category",
+				"style": {
+					"fontSize": "13px",
+					"textAlign": "justify"
+				},
+				"iterableChild": true
+			},
+			"displayName": "Text",
+			"custom": {
+				"__t": {
+					"doc": []
+				}
+			},
+			"parent": "5mu5ZCXX8Q",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"mCDdFFl7rQ": {
+			"type": {
+				"resolvedName": "Text"
+			},
+			"isCanvas": false,
+			"props": {
+				"events": [],
+				"doc": [
+					{
+						"type": "paragraph",
+						"children": [
+							{
+								"text": ""
+							},
+							{
+								"type": "datasource",
+								"datasource": "CurrentRecip:$content.Title",
+								"children": [
+									{
+										"bold": true,
+										"italic": false,
+										"underlined": false,
+										"strikethrough": false,
+										"text": "Recipe Title"
+									}
+								],
+								"dsType": "string",
+								"format": ""
+							},
+							{
+								"text": ""
+							}
+						]
+					}
+				],
+				"datasource": "CurrentRecip:$content.Title",
+				"style": {
+					"width": "fit-content",
+					"minWidth": "fit-content",
+					"maxWidth": "fit-content",
+					"fontSize": "13px",
+					"textAlign": "start"
+				},
+				"iterableChild": true
+			},
+			"displayName": "Text",
+			"custom": {
+				"__t": {
+					"doc": []
+				}
+			},
+			"parent": "5mu5ZCXX8Q",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"9fpFEroShg": {
+			"type": {
+				"resolvedName": "StyleBox"
+			},
+			"isCanvas": true,
+			"props": {
+				"events": [],
+				"style": {
+					"width": "30%",
+					"minWidth": "20%",
+					"fontSize": "17px",
+					"display": "flex",
+					"alignItems": "center",
+					"justifyContent": "flex-end",
+					"paddingRight": "0px",
+					"paddingBottom": "0px",
+					"paddingTop": "0px",
+					"paddingLeft": "0px"
+				},
+				"iterableChild": true
+			},
+			"displayName": "Stylebox",
+			"custom": {},
+			"parent": "7ZeIcoG2iR",
+			"hidden": false,
+			"nodes": [
+				"-mH5-Qlt-S"
+			],
+			"linkedNodes": {}
+		},
+		"-mH5-Qlt-S": {
+			"type": {
+				"resolvedName": "StyleBox"
+			},
+			"isCanvas": true,
+			"props": {
+				"events": [],
+				"style": {
+					"display": "flex",
+					"flexDirection": "row",
+					"gap": "10px",
+					"paddingLeft": "0px",
+					"justifyContent": "center",
+					"alignItems": "center",
+					"paddingRight": "0px",
+					"paddingBottom": "0px",
+					"paddingTop": "0px",
+					"marginRight": "0px",
+					"marginBottom": "0px",
+					"marginTop": "0px",
+					"marginLeft": "0px"
+				},
+				"iterableChild": true
+			},
+			"displayName": "Stylebox",
+			"custom": {},
+			"parent": "9fpFEroShg",
+			"hidden": false,
+			"nodes": [
+				"TpS5l80Pel"
+			],
+			"linkedNodes": {}
+		},
+		"TpS5l80Pel": {
+			"type": {
+				"resolvedName": "Icon"
+			},
+			"isCanvas": false,
+			"props": {
+				"classNames": [],
+				"events": [],
+				"icon": "fa-solid fa-heart-circle-check",
+				"style": {
+					"color": "#7b808bff",
+					"fontSize": "30px"
+				}
+			},
+			"displayName": "Icon",
+			"custom": {},
+			"parent": "-mH5-Qlt-S",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"cSLgfjZllT": {
+			"type": {
+				"resolvedName": "StyleBox"
+			},
+			"isCanvas": true,
+			"props": {
+				"events": [],
+				"style": {
+					"display": "flex",
+					"flexDirection": "row",
+					"flexWrap": "nowrap",
+					"paddingTop": "4px",
+					"paddingRight": "4px",
+					"paddingBottom": "4px",
+					"paddingLeft": "4px",
+					"justifyContent": "flex-start",
+					"marginRight": "0px",
+					"marginBottom": "0px",
+					"marginTop": "0px",
+					"marginLeft": "0px",
+					"gap": "10px"
+				},
+				"iterableChild": true
+			},
+			"displayName": "Stylebox",
+			"custom": {},
+			"parent": "jZ-rIJrsX4",
+			"hidden": false,
+			"nodes": [
+				"Z8Fij9NgfB",
+				"ftCbWymA_-"
+			],
+			"linkedNodes": {}
+		},
+		"Z8Fij9NgfB": {
+			"type": {
+				"resolvedName": "StyleBox"
+			},
+			"isCanvas": true,
+			"props": {
+				"events": [],
+				"style": {
+					"display": "flex",
+					"flexDirection": "row",
+					"gap": "0px",
+					"alignItems": "center",
+					"width": "fit-content",
+					"height": "fit-content",
+					"minHeight": "fit-content",
+					"paddingBottom": "0px",
+					"paddingRight": "0px",
+					"paddingTop": "0px",
+					"paddingLeft": "0px",
+					"marginRight": "0px",
+					"marginBottom": "0px",
+					"marginTop": "0px",
+					"marginLeft": "0px",
+					"justifyContent": "flex-start"
+				},
+				"iterableChild": true
+			},
+			"displayName": "Stylebox",
+			"custom": {},
+			"parent": "cSLgfjZllT",
+			"hidden": false,
+			"nodes": [
+				"UswCVuUcQX",
+				"V1TIskSL_N"
+			],
+			"linkedNodes": {}
+		},
+		"UswCVuUcQX": {
+			"type": {
+				"resolvedName": "Icon"
+			},
+			"isCanvas": false,
+			"props": {
+				"classNames": [],
+				"events": [],
+				"icon": "fa-solid fa-user",
+				"style": {
+					"color": "#7b808bff",
+					"fontSize": "20px"
+				}
+			},
+			"displayName": "Icon",
+			"custom": {},
+			"parent": "Z8Fij9NgfB",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"V1TIskSL_N": {
+			"type": {
+				"resolvedName": "Text"
+			},
+			"isCanvas": false,
+			"props": {
+				"events": [],
+				"doc": [
+					{
+						"type": "paragraph",
+						"children": [
+							{
+								"text": ""
+							},
+							{
+								"type": "datasource",
+								"datasource": "CurrentRecip:$content.Servings",
+								"children": [
+									{
+										"text": "8",
+										"bold": false,
+										"italic": false,
+										"underlined": false,
+										"strikethrough": false
+									}
+								],
+								"dsType": "long",
+								"format": ""
+							},
+							{
+								"bold": false,
+								"italic": false,
+								"underlined": false,
+								"strikethrough": false,
+								"text": "  Servings"
+							}
+						]
+					}
+				],
+				"datasource": "CurrentRecip:$content.Servings",
+				"style": {
+					"color": "#636e93",
+					"fontSize": "13px"
+				},
+				"iterableChild": true
+			},
+			"displayName": "Text",
+			"custom": {
+				"__t": {
+					"doc": []
+				}
+			},
+			"parent": "Z8Fij9NgfB",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"ftCbWymA_-": {
+			"type": {
+				"resolvedName": "StyleBox"
+			},
+			"isCanvas": true,
+			"props": {
+				"events": [],
+				"style": {
+					"display": "flex",
+					"flexDirection": "row",
+					"gap": "0px",
+					"alignItems": "center",
+					"width": "fit-content",
+					"height": "fit-content",
+					"minHeight": "fit-content",
+					"paddingBottom": "0px",
+					"paddingRight": "0px",
+					"paddingTop": "0px",
+					"paddingLeft": "0px",
+					"marginRight": "0px",
+					"marginBottom": "0px",
+					"marginTop": "0px",
+					"marginLeft": "0px",
+					"justifyContent": "flex-start"
+				},
+				"iterableChild": true
+			},
+			"displayName": "Stylebox",
+			"custom": {},
+			"parent": "cSLgfjZllT",
+			"hidden": false,
+			"nodes": [
+				"H-0VeLe9wP",
+				"4aJicJtED5"
+			],
+			"linkedNodes": {}
+		},
+		"H-0VeLe9wP": {
+			"type": {
+				"resolvedName": "Icon"
+			},
+			"isCanvas": false,
+			"props": {
+				"classNames": [],
+				"events": [],
+				"icon": "fa-solid fa-alarm-clock",
+				"style": {
+					"color": "#7b808bff"
+				}
+			},
+			"displayName": "Icon",
+			"custom": {},
+			"parent": "ftCbWymA_-",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"4aJicJtED5": {
+			"type": {
+				"resolvedName": "Text"
+			},
+			"isCanvas": false,
+			"props": {
+				"events": [],
+				"doc": [
+					{
+						"type": "paragraph",
+						"children": [
+							{
+								"text": ""
+							},
+							{
+								"type": "datasource",
+								"datasource": "CurrentRecip:$content.CookTime",
+								"children": [
+									{
+										"text": "time",
+										"bold": false,
+										"italic": false,
+										"underlined": false,
+										"strikethrough": false
+									}
+								],
+								"dsType": "duration",
+								"format": "Simple"
+							},
+							{
+								"text": ""
+							}
+						]
+					}
+				],
+				"datasource": "CurrentRecip:$content.CookTime",
+				"style": {
+					"color": "#636e93"
+				},
+				"iterableChild": true
+			},
+			"displayName": "Text",
+			"custom": {
+				"__t": {
+					"doc": []
+				}
+			},
+			"parent": "ftCbWymA_-",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"EI9x0os_oL": {
+			"type": {
+				"resolvedName": "StyleBox"
+			},
+			"isCanvas": true,
+			"props": {
+				"events": [],
+				"style": {
+					"borderTopWidth": "1px",
+					"borderTopColor": "#d5d4d4ff",
+					"display": "flex",
+					"alignItems": "center",
+					"paddingRight": "0px",
+					"justifyContent": "center",
+					"gap": "10px",
+					"marginRight": "0px",
+					"marginBottom": "0px",
+					"marginTop": "0px",
+					"marginLeft": "0px",
+					"paddingLeft": "0px",
+					"paddingBottom": "5px",
+					"paddingTop": "5px"
+				},
+				"iterableChild": true
+			},
+			"displayName": "Stylebox",
+			"custom": {},
+			"parent": "jZ-rIJrsX4",
+			"hidden": false,
+			"nodes": [
+				"dzYEL5U4fd",
+				"3JKSBVg03O"
+			],
+			"linkedNodes": {}
+		},
+		"dzYEL5U4fd": {
+			"type": {
+				"resolvedName": "Button"
+			},
+			"isCanvas": false,
+			"props": {
+				"text": "Edit",
+				"classNames": [],
+				"events": [
+					{
+						"type": "simple-action",
+						"id": "g4pWK3TRPLcS788SrgwiD4",
+						"events": [
+							"onclick"
+						],
+						"action": "create",
+						"actionType": "datasource",
+						"datasource": {
+							"name": "$content",
+							"namespace": "CurrentRecip",
+							"target": "currentRecipe",
+							"targetNamespace": "CurrentRecip",
+							"targetType": "entity",
+							"from": "",
+							"type": "entity",
+							"dataType": "unknown"
+						},
+						"state": {}
+					},
+					{
+						"type": "method",
+						"dataclass": "Recipes",
+						"events": [
+							"onclick"
+						],
+						"id": "79Pr457FJVQiQodXj6EbDC",
+						"method": "ds.Recipes.getCookingSteps",
+						"params": [
+							{
+								"name": "recipe",
+								"type": "cs.RecipesEntity",
+								"datasource": "CurrentRecip:currentRecipe",
+								"id": "fFQ7jckBcTqeZ7SJCGuMUL"
+							}
+						],
+						"datasource": "",
+						"allowedOnHTTPGET": false,
+						"returns": {
+							"name": "result",
+							"type": "Collection",
+							"datasource": "CurrentRecip:cookingSteps"
+						},
+						"feedback": true
+					},
+					{
+						"type": "dialog",
+						"id": "gmAqE8D9nzpNse7MZx8vdd",
+						"events": [
+							"onclick"
+						],
+						"actionType": "open",
+						"targetDialog": "EditRecipDialog"
+					}
+				],
+				"iconPosition": "hidden",
+				"style": {
+					"display": "inline",
+					"height": "fit-content",
+					"borderRadius": "20px",
+					"paddingLeft": "20px",
+					"paddingRight": "20px",
+					"paddingTop": "2px",
+					"paddingBottom": "2px",
+					"width": "fit-content",
+					"backgroundColor": "#2f64db",
+					"fontSize": "13px",
+					"fontWeight": "500"
+				}
+			},
+			"displayName": "Button",
+			"custom": {},
+			"parent": "EI9x0os_oL",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {
+				"icon": "p9bH3dkKJh"
+			}
+		},
+		"p9bH3dkKJh": {
+			"type": {
+				"resolvedName": "Icon"
+			},
+			"isCanvas": false,
+			"props": {
+				"classNames": [],
+				"events": [],
+				"icon": "fa-star"
+			},
+			"displayName": "Icon",
+			"custom": {},
+			"parent": "dzYEL5U4fd",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"3JKSBVg03O": {
+			"type": {
+				"resolvedName": "Button"
+			},
+			"isCanvas": false,
+			"props": {
+				"text": "Delete",
+				"classNames": [],
+				"events": [],
+				"iconPosition": "hidden",
+				"style": {
+					"display": "inline",
+					"height": "fit-content",
+					"borderRadius": "20px",
+					"paddingLeft": "20px",
+					"paddingRight": "20px",
+					"paddingTop": "2px",
+					"paddingBottom": "2px",
+					"width": "fit-content",
+					"backgroundColor": "#e35f5bff",
+					"fontSize": "13px",
+					"fontWeight": "500"
+				}
+			},
+			"displayName": "Button",
+			"custom": {},
+			"parent": "EI9x0os_oL",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {
+				"icon": "kFxvgBOoGb"
+			}
+		},
+		"kFxvgBOoGb": {
+			"type": {
+				"resolvedName": "Icon"
+			},
+			"isCanvas": false,
+			"props": {
+				"classNames": [],
+				"events": [],
+				"icon": "fa-star"
+			},
+			"displayName": "Icon",
+			"custom": {},
+			"parent": "3JKSBVg03O",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"Ha-3GWUasn": {
+			"type": {
+				"resolvedName": "Dialog"
+			},
+			"isCanvas": false,
+			"props": {
+				"classNames": [],
+				"events": [],
+				"overlay": true,
+				"serverSideRef": "EditRecipDialog"
+			},
+			"displayName": "Dialog",
+			"custom": {},
+			"parent": "ROOT",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {
+				"Dialog": "OrYWR3sy-o"
+			}
+		},
+		"OrYWR3sy-o": {
+			"type": {
+				"resolvedName": "StyleBox"
+			},
+			"isCanvas": true,
+			"props": {
+				"events": [],
+				"className": "h-full flex-1",
+				"style": {
+					"paddingRight": "0px",
+					"paddingBottom": "0px",
+					"paddingTop": "0px",
+					"paddingLeft": "0px"
+				},
+				"iterableChild": true
+			},
+			"displayName": "Stylebox",
+			"custom": {},
+			"parent": "Ha-3GWUasn",
+			"hidden": false,
+			"nodes": [
+				"nDbgXJ6j00"
+			],
+			"linkedNodes": {}
+		},
+		"nDbgXJ6j00": {
+			"type": {
+				"resolvedName": "WebformLoader"
+			},
+			"isCanvas": false,
+			"props": {
+				"events": [],
+				"style": {
+					"paddingRight": "0px",
+					"paddingBottom": "0px",
+					"paddingTop": "0px",
+					"paddingLeft": "0px"
+				}
+			},
+			"displayName": "Page Loader",
+			"custom": {},
+			"parent": "OrYWR3sy-o",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"2F03vinjq_": {
+			"type": {
+				"resolvedName": "StyleBox"
+			},
+			"isCanvas": true,
+			"props": {
+				"events": [],
+				"iterableChild": true
+			},
+			"displayName": "Stylebox",
+			"custom": {},
+			"parent": "ROOT",
+			"hidden": false,
+			"nodes": [
+				"QwKqEeJPDa"
+			],
+			"linkedNodes": {}
+		},
+		"QwKqEeJPDa": {
+			"type": {
+				"resolvedName": "Text"
+			},
+			"isCanvas": false,
+			"props": {
+				"events": [],
+				"iterableChild": true,
+				"doc": [
+					{
+						"type": "paragraph",
+						"children": [
+							{
+								"text": ""
+							},
+							{
+								"type": "datasource",
+								"datasource": "CurrentRecip:RecipesList.length",
+								"children": [
+									{
+										"text": "Write your text here",
+										"bold": false,
+										"italic": false,
+										"underlined": false,
+										"strikethrough": false
+									}
+								],
+								"dsType": "long",
+								"format": ""
+							},
+							{
+								"text": ""
+							}
+						]
+					}
+				],
+				"datasource": "CurrentRecip:RecipesList.length"
+			},
+			"displayName": "Text",
+			"custom": {
+				"__t": {
+					"doc": []
+				}
+			},
+			"parent": "2F03vinjq_",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		}
+	}
+}

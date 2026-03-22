@@ -1,6 +1,6 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE base SYSTEM "http://www.4d.com/dtd/2007/base.dtd" >
-<base name="" uuid="64679D88AACD44C8BE8C8D2B9B24E390" collation_locale="en">
+<base name="Recipes" uuid="64679D88AACD44C8BE8C8D2B9B24E390" collation_locale="en">
 	<schema name="DEFAULT_SCHEMA"/>
 	<table name="Recipes" uuid="E49589C96E1C4717AEE5C1CED1644E86" id="3">
 		<field name="ID" uuid="7233566CF0334032991B53AE58CDDA74" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
@@ -37,7 +37,7 @@
 			</editor_table_info>
 		</table_extra>
 	</table>
-	<relation uuid="A7E8C3E6D4724F289835BB4B0A54E89A" name_Nto1="recipe" name_1toN="ingredients" auto_load_Nto1="false" auto_load_1toN="false" foreign_key="false" state="1" integrity="delete">
+	<relation uuid="A7E8C3E6D4724F289835BB4B0A54E89A" name_Nto1="recipe" name_1toN="ingredients" state="1" integrity="delete">
 		<related_field kind="source">
 			<field_ref uuid="0AC9B3CD70EA4CD3AEBA824B7336DA7A" name="RecipesID">
 				<table_ref uuid="508C1C6D06EF4C83A68427122DB2628A" name="Ingredients"/>
@@ -74,7 +74,7 @@
 			<table_ref uuid="508C1C6D06EF4C83A68427122DB2628A" name="Ingredients"/>
 		</field_ref>
 	</index>
-	<base_extra __stringCompHash="icu:63.1.0" __keywordBuildingHash="icu:63.1.0" package_name="Recipes" structure_file_name="Recipes" data_file_path=":Recipes.4DD" last_opening_mode="1">
+	<base_extra package_name="Recipes" structure_file_name="Recipes" data_file_path=":Recipes.4DD" last_opening_mode="1">
 		<journal_file journal_file_enabled="true"/>
 	</base_extra>
 </base>
