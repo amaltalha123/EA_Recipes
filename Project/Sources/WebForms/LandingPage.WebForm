@@ -924,7 +924,8 @@
 					"marginBottom": "0px",
 					"marginTop": "0px",
 					"marginLeft": "0px",
-					"gap": "10px"
+					"gap": "10px",
+					"alignItems": "center"
 				},
 				"iterableChild": true
 			},
@@ -934,7 +935,8 @@
 			"hidden": false,
 			"nodes": [
 				"3ETAasIXEq",
-				"LSE2e2Lb_7"
+				"LSE2e2Lb_7",
+				"zdEW_gaJUE"
 			],
 			"linkedNodes": {}
 		},
@@ -1038,7 +1040,8 @@
 				"datasource": "$item.Servings",
 				"style": {
 					"color": "#636e93",
-					"fontSize": "13px"
+					"fontSize": "13px",
+					"fontWeight": "500"
 				},
 				"iterableChild": true
 			},
@@ -5767,6 +5770,60 @@
 			"displayName": "Icon",
 			"custom": {},
 			"parent": "d2JT5HaTWv",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"zdEW_gaJUE": {
+			"type": {
+				"resolvedName": "Text"
+			},
+			"isCanvas": false,
+			"props": {
+				"events": [],
+				"iterableChild": true,
+				"doc": [
+					{
+						"type": "paragraph",
+						"children": [
+							{
+								"text": ""
+							},
+							{
+								"type": "datasource",
+								"datasource": "$item.Cuisine",
+								"children": [
+									{
+										"text": "Cuisine",
+										"bold": false,
+										"italic": false,
+										"underlined": false,
+										"strikethrough": false
+									}
+								],
+								"dsType": "string",
+								"format": ""
+							},
+							{
+								"text": ""
+							}
+						]
+					}
+				],
+				"datasource": "$item.Cuisine",
+				"style": {
+					"fontSize": "13px",
+					"fontWeight": "500",
+					"color": "#636e93"
+				}
+			},
+			"displayName": "Text",
+			"custom": {
+				"__t": {
+					"doc": []
+				}
+			},
+			"parent": "7bczyaSv3G",
 			"hidden": false,
 			"nodes": [],
 			"linkedNodes": {}
