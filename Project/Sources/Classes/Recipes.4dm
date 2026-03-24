@@ -1,64 +1,86 @@
 Class extends DataClass
-exposed Function getLookupData($type : Text) : Collection
-    var $result : Collection
-    var $final : Collection
-    var $item : Text
-    var $o : Object
-    
-    $result := New collection
-    $final := New collection
-    
-    Case of 
-        : ($type="Categories")
-            $result := ds.Recipes.all().distinct("Category")
-            For each ($item; $result)
-                $o := New object
-                $o.content := $item
-                $o.count := ds.Recipes.query("Category = :1"; $item).length
-                $final.push($o)
-            End for each
-            
-        : ($type="Cuisine")
-            $result := ds.Recipes.all().distinct("Cuisine")
-            For each ($item; $result)
-                $o := New object
-                $o.content := $item
-                $o.count := ds.Recipes.query("Cuisine = :1"; $item).length
-                $final.push($o)
-            End for each
 
-        : ($type="Ingredients")
-            $result := ds.Ingredients.all().distinct("Item")
-            For each ($item; $result)
-                $o := New object
-                $o.content := $item
-                // Nombre de recettes distinctes utilisant cet ingrédient
-                $o.count := ds.Ingredients.query("Item = :1"; $item)\
-                    .distinct("RecipesID").length
-                $final.push($o)
-            End for each
-		: ($type="Favorites")
-			var $favSelection : cs.RecipesSelection
-			var $recipe : cs.RecipesEntity
-			$favSelection := ds.Recipes.query("Favorites = true").orderBy("ID desc")
-			For each ($recipe; $favSelection)
-				$o := New object
-				$o.content := $recipe.Title
-				$o.count := 1
-				$final.push($o)
-			End for each
-          
-    End case
+
+exposed Function dropRecipeWithIngredients($recipe : cs.RecipesEntity) : Boolean
+    var $ingredients : cs.IngredientsSelection
+    var $ingredient : cs.IngredientsEntity
+    var $status : Object
     
-    return $final
+    // Récupérer tous les ingrédients liés à la recette
+    $ingredients := ds.Ingredients.query("RecipesID == :1"; $recipe.ID)
+    
+    // Supprimer chaque ingrédient lié
+	For each ($ing; $ingredients)
+		$ing.drop()
+	End for each
+    
+    // Supprimer la recette elle-même
+    $status := $recipe.drop()
+    return $status.success
 
-exposed Function getTotalRecips() : Integer
-	$result := ds.Recipes.all().length
-	return $result
+exposed Function cancelRecipe($recipe : cs.RecipesEntity)
+    If ($recipe.ID <= 0)
+        
+        // Supprimer les ingrédients orphelins
+        var $ings : cs.IngredientsSelection
+        var $ing : cs.IngredientsEntity
+        $ings := ds.Ingredients.query("RecipesID = :1"; $recipe.ID)
+        For each ($ing; $ings)
+            $ing.drop()
+        End for each
+        
+        // Supprimer la recette temporaire
+        $recipe.drop()
+        
+    End if
 
-exposed Function getTotalFavorites() : Integer
-	$favSelection := ds.Recipes.query("Favorites = true").length
-	return $favSelection
+// Filter
+exposed Function filterRecipes($searchText : Text; $favoriteOnly : Boolean;  $category : Text; $cuisine : Text; $selectedIngredients : Collection) : cs.RecipesSelection
+
+    var $result : cs.RecipesSelection
+    var $query : Text
+    var $params : Collection
+    var $ing : Object
+    var $ingNames : Collection
+    
+    $result := ds.Recipes.all()
+  
+	if($searchText # "")
+		$result := ds.Recipes.query("Title = :1"; "@"+$searchText+"@")
+	End if
+    // Filtre favoris
+    If ($favoriteOnly = True)
+        $result := $result.query("Favorites = true")
+	End If 
+    
+    // Filtre catégorie
+    If ($category # "")
+        $result := $result.query("Category = :1"; $category)
+    End if
+    
+    // Filtre cuisine
+    If ($cuisine # "")
+        $result := $result.query("Cuisine = :1"; $cuisine)
+    End if
+    
+    // Filtre ingrédients cochés
+    If ($selectedIngredients # Null)
+        $ingNames := New collection()
+        For each ($ing; $selectedIngredients)
+            If ($ing.selected = True)
+                $ingNames.push($ing.content.Item)
+            End if
+        End for each
+        
+        If ($ingNames.length > 0)
+            var $ingName : Text
+            For each ($ingName; $ingNames)
+                $result := $result.query("ingredients.Item = :1"; $ingName)
+            End for each
+        End if
+    End if
+    
+    return $result
 
 exposed Function getCookingSteps($recipe : cs.RecipesEntity) : Collection
     var $steps : Collection
@@ -75,26 +97,3 @@ exposed Function getCookingSteps($recipe : cs.RecipesEntity) : Collection
     
     return $result
 
-exposed Function getSelectedRecipe($id : Integer) : cs.RecipesEntity
-    var $recipe : cs.RecipesEntity
-    $recipe := ds.Recipes.query("ID = :1"; $id).first()
-    return $recipe
-
-exposed Function getAllRecipe() : cs.RecipesSelection
-    var $recipes : cs.RecipesSelection
-    $recipes := ds.Recipes.all()
-    return $recipes
-
-	
-exposed Function getRecipesByLookup($type : Text; $content : Text) : cs.RecipesSelection
-    
-    Case of 
-        : ($type="Categories")
-            return ds.Recipes.query("Category = :1"; $content).orderBy("ID desc")
-            
-        : ($type="Cuisine")
-            return ds.Recipes.query("Cuisine = :1"; $content).orderBy("ID desc")
-            
-        : ($type="Ingredients")
-            return ds.Recipes.query("ingredients.Item = :1"; $content).orderBy("ID desc")
-    End case

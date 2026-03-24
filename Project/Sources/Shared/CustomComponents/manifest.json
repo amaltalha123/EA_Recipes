@@ -11,5 +11,18 @@
 		"module": "components",
 		"remoteEntryFileName": "components.js",
 		"url": "/$shared/CustomComponents/qodly_0c2f8fd593aea2c48150/"
+	},
+	{
+		"name": "file_download",
+		"version": "0.4.0",
+		"scope": "qodly_29100b5169c6dd537d9a",
+		"author": {
+			"name": "Qodly Team",
+			"email": "contact@qodly.com",
+			"url": "https://qodly.com"
+		},
+		"module": "components",
+		"remoteEntryFileName": "components.js",
+		"url": "/$shared/CustomComponents/qodly_29100b5169c6dd537d9a/"
 	}
 ]
