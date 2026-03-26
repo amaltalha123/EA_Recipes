@@ -5,7 +5,7 @@ exposed Function dropRecipeWithIngredients($recipe : cs.RecipesEntity) : Boolean
     var $ingredients : cs.IngredientsSelection
     var $ingredient : cs.IngredientsEntity
     var $status : Object
-    
+    var $ing : object
     // Récupérer tous les ingrédients liés à la recette
     $ingredients := ds.Ingredients.query("RecipesID == :1"; $recipe.ID)
     
@@ -18,21 +18,21 @@ exposed Function dropRecipeWithIngredients($recipe : cs.RecipesEntity) : Boolean
     $status := $recipe.drop()
     return $status.success
 
-exposed Function cancelRecipe($recipe : cs.RecipesEntity)
-    If ($recipe.ID <= 0)
+// exposed Function cancelRecipe($recipe : cs.RecipesEntity)
+//     If ($recipe.ID <= 0)
         
-        // Supprimer les ingrédients orphelins
-        var $ings : cs.IngredientsSelection
-        var $ing : cs.IngredientsEntity
-        $ings := ds.Ingredients.query("RecipesID = :1"; $recipe.ID)
-        For each ($ing; $ings)
-            $ing.drop()
-        End for each
+//         // Supprimer les ingrédients orphelins
+//         var $ings : cs.IngredientsSelection
+//         var $ing : cs.IngredientsEntity
+//         $ings := ds.Ingredients.query("RecipesID = :1"; $recipe.ID)
+//         For each ($ing; $ings)
+//             $ing.drop()
+//         End for each
         
-        // Supprimer la recette temporaire
-        $recipe.drop()
+//         // Supprimer la recette temporaire
+//         $recipe.drop()
         
-    End if
+//     End if
 
 // Filter
 exposed Function filterRecipes($searchText : Text; $favoriteOnly : Boolean;  $category : Text; $cuisine : Text; $selectedIngredients : Collection) : cs.RecipesSelection
@@ -82,18 +82,46 @@ exposed Function filterRecipes($searchText : Text; $favoriteOnly : Boolean;  $ca
     
     return $result
 
+exposed Function saveCookingStep($recipe : cs.RecipesEntity; $step : Object; $steps : Collection) : Collection
+	var $result : Collection
+    If ($steps = Null)
+        $result := New collection()
+    Else
+        $result := $steps
+    End if
+    If (($step # Null) && ($step.step # ""))
+		If (Length($step.step) > 0)
+			$result.push($step)
+		End if
+    End if
+    return $result
+
+exposed Function deleteCookingStep($step : Object; $steps : Collection) : Collection
+    var $result : Collection
+    var $s : Object
+    $result := New collection()
+		For each ($s; $steps)
+			If ($s.step # $step.step)
+				$result.push($s)
+			End if
+		End for each
+    return $result
+
 exposed Function getCookingSteps($recipe : cs.RecipesEntity) : Collection
     var $steps : Collection
     var $result : Collection
     var $step : Text
     var $i : Integer
     
-    $steps := $recipe.CookingSteps.steps
-    $result := New collection
+	$result := New collection()
     
-    For each ($step; $steps)
-        $result.push(New object("step"; $step))
-    End for each
-    
+    If ($recipe.CookingSteps # Null)
+        $steps := $recipe.CookingSteps.steps
+        If ($steps # Null)
+            For each ($step; $steps)
+                $result.push(New object("step"; $step))
+            End for each
+        End if
+    End if
     return $result
 

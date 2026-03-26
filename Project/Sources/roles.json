@@ -1,8 +1,95 @@
 {
-	"forceLogin": false,
+	"forceLogin": true,
 	"restrictedByDefault": false,
 	"permissions": {
-		"allowed": []
+		"allowed": [
+			{
+				"applyTo": "Recipes.filterRecipes",
+				"type": "method",
+				"execute": [
+					"guest"
+				]
+			},
+			{
+				"applyTo": "Recipes.getCookingSteps",
+				"type": "method",
+				"execute": [
+					"guest"
+				]
+			},
+			{
+				"applyTo": "Ingredients.updateSelected",
+				"type": "method",
+				"execute": [
+					"guest"
+				]
+			},
+			{
+				"applyTo": "Ingredients.SaveSelectedIngs",
+				"type": "method",
+				"execute": [
+					"guest"
+				]
+			},
+			{
+				"applyTo": "Recipes.dropRecipeWithIngredients",
+				"type": "method",
+				"execute": [
+					"guest"
+				]
+			},
+			{
+				"applyTo": "Ingredients.getIngredientsWithSelected",
+				"type": "method",
+				"execute": [
+					"guest"
+				]
+			},
+			{
+				"applyTo": "Ingredients.SearchIngredients",
+				"type": "method",
+				"execute": [
+					"guest"
+				]
+			},
+			{
+				"applyTo": "Recipes",
+				"type": "dataclass",
+				"read": [
+					"guest"
+				],
+				"drop": [
+					"guest"
+				],
+				"execute": [
+					"guest"
+				]
+			},
+			{
+				"applyTo": "Ingredients",
+				"type": "dataclass",
+				"read": [
+					"guest"
+				],
+				"execute": [
+					"guest"
+				]
+			},
+			{
+				"applyTo": "Ingredients.recipe",
+				"type": "attribute",
+				"read": [
+					"guest"
+				]
+			},
+			{
+				"applyTo": "Ingredients.SaveIngredient",
+				"type": "method",
+				"execute": [
+					"guest"
+				]
+			}
+		]
 	},
 	"privileges": [],
 	"roles": []

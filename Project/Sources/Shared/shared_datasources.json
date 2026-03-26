@@ -79,7 +79,22 @@
 			"dataclass": "Ingredients",
 			"namespace": "CurrentRecip",
 			"initialValue": "",
-			"depth": null
+			"depth": null,
+			"events": [
+				{
+					"type": "simple-action",
+					"id": "23aouCLPsfGVCh8xSzomB8",
+					"events": [
+						"onInit"
+					],
+					"action": "",
+					"actionType": "datasource",
+					"datasource": {
+						"name": "",
+						"from": ""
+					}
+				}
+			]
 		},
 		{
 			"id": "RecipesList",

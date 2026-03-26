@@ -253,7 +253,7 @@
 						"type": "paragraph",
 						"children": [
 							{
-								"text": "Recipe Manager",
+								"text": "4D Recipes",
 								"italic": false,
 								"underlined": false,
 								"strikethrough": false
@@ -316,15 +316,6 @@
 				"classNames": [],
 				"events": [
 					{
-						"type": "dialog",
-						"id": "dMQmqGkfuSFiBYVcZuCWyd",
-						"events": [
-							"onclick"
-						],
-						"actionType": "open",
-						"targetDialog": "RecipInputDialog"
-					},
-					{
 						"type": "simple-action",
 						"id": "m9oxc7XkBVCBvc6QcrPkFT",
 						"events": [
@@ -359,7 +350,36 @@
 					},
 					{
 						"type": "simple-action",
+						"id": "8BpqqpijZYqjx7sUFZXgGZ",
+						"events": [
+							"onclick"
+						],
+						"action": "clear",
+						"actionType": "datasource",
+						"datasource": {
+							"name": "CurrentIngredient",
+							"type": "entity",
+							"namespace": "CurrentRecip"
+						}
+					},
+					{
+						"type": "simple-action",
 						"id": "463Np2tyWNbNPjb91e2EKe",
+						"events": [
+							"onclick"
+						],
+						"action": "clear",
+						"actionType": "datasource",
+						"datasource": {
+							"name": "currentRecipe",
+							"type": "entity",
+							"namespace": "CurrentRecip"
+						},
+						"state": {}
+					},
+					{
+						"type": "simple-action",
+						"id": "nFzkjEj2ipbLVNJt8wJkwE",
 						"events": [
 							"onclick"
 						],
@@ -369,8 +389,16 @@
 							"name": "currentRecipe",
 							"type": "entity",
 							"namespace": "CurrentRecip"
-						},
-						"state": {}
+						}
+					},
+					{
+						"type": "dialog",
+						"id": "dMQmqGkfuSFiBYVcZuCWyd",
+						"events": [
+							"onclick"
+						],
+						"actionType": "open",
+						"targetDialog": "RecipInputDialog"
 					}
 				],
 				"iconPosition": "hidden",
@@ -673,8 +701,7 @@
 			"parent": "83IP7TckGH",
 			"hidden": false,
 			"nodes": [
-				"H69TUJr0os",
-				"92AWT0Nv0V"
+				"H69TUJr0os"
 			],
 			"linkedNodes": {}
 		},
@@ -816,90 +843,6 @@
 				}
 			},
 			"parent": "H69TUJr0os",
-			"hidden": false,
-			"nodes": [],
-			"linkedNodes": {}
-		},
-		"92AWT0Nv0V": {
-			"type": {
-				"resolvedName": "StyleBox"
-			},
-			"isCanvas": true,
-			"props": {
-				"events": [],
-				"style": {
-					"width": "30%",
-					"minWidth": "20%",
-					"fontSize": "17px",
-					"display": "flex",
-					"alignItems": "center",
-					"justifyContent": "flex-end",
-					"paddingRight": "0px",
-					"paddingBottom": "0px",
-					"paddingTop": "0px",
-					"paddingLeft": "0px"
-				},
-				"iterableChild": true
-			},
-			"displayName": "Stylebox",
-			"custom": {},
-			"parent": "HtDT_QPSSb",
-			"hidden": false,
-			"nodes": [
-				"ck4uZo9JKJ"
-			],
-			"linkedNodes": {}
-		},
-		"ck4uZo9JKJ": {
-			"type": {
-				"resolvedName": "StyleBox"
-			},
-			"isCanvas": true,
-			"props": {
-				"events": [],
-				"style": {
-					"display": "flex",
-					"flexDirection": "row",
-					"gap": "10px",
-					"paddingLeft": "0px",
-					"justifyContent": "center",
-					"alignItems": "center",
-					"paddingRight": "0px",
-					"paddingBottom": "0px",
-					"paddingTop": "0px",
-					"marginRight": "0px",
-					"marginBottom": "0px",
-					"marginTop": "0px",
-					"marginLeft": "0px"
-				},
-				"iterableChild": true
-			},
-			"displayName": "Stylebox",
-			"custom": {},
-			"parent": "92AWT0Nv0V",
-			"hidden": false,
-			"nodes": [
-				"ZoLvAXOOkt"
-			],
-			"linkedNodes": {}
-		},
-		"ZoLvAXOOkt": {
-			"type": {
-				"resolvedName": "Icon"
-			},
-			"isCanvas": false,
-			"props": {
-				"classNames": [],
-				"events": [],
-				"icon": "fa-solid fa-heart-circle-check",
-				"style": {
-					"color": "#7b808bff",
-					"fontSize": "30px"
-				}
-			},
-			"displayName": "Icon",
-			"custom": {},
-			"parent": "ck4uZo9JKJ",
 			"hidden": false,
 			"nodes": [],
 			"linkedNodes": {}
@@ -1521,7 +1464,7 @@
 				"events": [],
 				"overlay": true,
 				"serverSideRef": "RecipInputDialog",
-				"closable": true,
+				"closable": false,
 				"animated": true
 			},
 			"displayName": "Dialog",
@@ -1603,6 +1546,7 @@
 			"parent": "lg3LxklJrn",
 			"hidden": false,
 			"nodes": [
+				"FA_0ikoDDu",
 				"bWX2OV3ixd",
 				"3-fFsljV37"
 			],
@@ -1705,7 +1649,8 @@
 								"value": "true",
 								"type": "bool"
 							}
-						}
+						},
+						"state": {}
 					}
 				],
 				"icon": "fa-solid fa-heart-circle-check",
@@ -1716,7 +1661,8 @@
 					"borderColor": "transparent",
 					"display": "block",
 					"justifyContent": "center",
-					"alignItems": "center"
+					"alignItems": "center",
+					"cursor": "pointer"
 				}
 			},
 			"displayName": "Icon",
@@ -3166,8 +3112,8 @@
 			"parent": "t2YetgpIBz",
 			"hidden": false,
 			"nodes": [
-				"jlgXGW6uzD",
 				"dWGaLywV1H",
+				"jlgXGW6uzD",
 				"DftEGZlcK1"
 			],
 			"linkedNodes": {}
@@ -3180,7 +3126,53 @@
 			"props": {
 				"text": "Save<br>",
 				"classNames": [],
-				"events": [],
+				"events": [
+					{
+						"type": "method",
+						"dataclass": "Ingredients",
+						"events": [
+							"onclick"
+						],
+						"id": "ic4ur7LtcVpm9daNdq8VxA",
+						"method": "ds.Ingredients.SaveIngredient",
+						"params": [
+							{
+								"name": "currentIng",
+								"type": "cs.IngredientsEntity",
+								"datasource": "CurrentRecip:CurrentIngredient",
+								"id": "3YisvxR2rWoiwBCxq6KNhU"
+							},
+							{
+								"name": "currentRecipe",
+								"type": "cs.RecipesEntity",
+								"datasource": "CurrentRecip:currentRecipe",
+								"id": "uUYZFb5FZK3B5VKquYRMAm"
+							}
+						],
+						"datasource": "",
+						"allowedOnHTTPGET": false,
+						"returns": {
+							"name": "result",
+							"type": "cs.IngredientsSelection",
+							"datasource": "CurrentRecip:currentRecipe.ingredients"
+						},
+						"feedback": true
+					},
+					{
+						"type": "simple-action",
+						"id": "tSg8bWLrLEjSPJxgmdURMp",
+						"events": [
+							"onclick"
+						],
+						"action": "create",
+						"actionType": "datasource",
+						"datasource": {
+							"name": "CurrentIngredient",
+							"type": "entity",
+							"namespace": "CurrentRecip"
+						}
+					}
+				],
 				"iconPosition": "hidden",
 				"style": {
 					"display": "flex"
@@ -3233,7 +3225,8 @@
 							"name": "CurrentIngredient",
 							"type": "entity",
 							"namespace": "CurrentRecip"
-						}
+						},
+						"state": {}
 					}
 				],
 				"iconPosition": "hidden",
@@ -3364,7 +3357,8 @@
 					}
 				],
 				"iterableChild": true,
-				"currentElement": "CurrentRecip:cookingStep"
+				"currentElement": "CurrentRecip:cookingStep",
+				"showBorders": false
 			},
 			"displayName": "DataTable",
 			"custom": {},
@@ -3500,8 +3494,8 @@
 			"parent": "vfBwaPsWqY",
 			"hidden": false,
 			"nodes": [
-				"VCMdxhxEs9",
 				"6OplxaSJMZ",
+				"VCMdxhxEs9",
 				"4dDauio4Yv"
 			],
 			"linkedNodes": {}
@@ -3514,7 +3508,45 @@
 			"props": {
 				"text": "Save",
 				"classNames": [],
-				"events": [],
+				"events": [
+					{
+						"type": "method",
+						"dataclass": "Recipes",
+						"events": [
+							"onclick"
+						],
+						"id": "9Ktcc1yxQu3qhFgHR2grkC",
+						"method": "ds.Recipes.saveCookingStep",
+						"params": [
+							{
+								"name": "recipe",
+								"type": "cs.RecipesEntity",
+								"datasource": "CurrentRecip:currentRecipe",
+								"id": "doPWqvfBJWe7NzGN4M1vFh"
+							},
+							{
+								"name": "step",
+								"type": "Object",
+								"datasource": "CurrentRecip:cookingStep",
+								"id": "e6qfrhUrUie3FBd4nLumdC"
+							},
+							{
+								"name": "steps",
+								"type": "Collection",
+								"datasource": "CurrentRecip:cookingSteps",
+								"id": "a9iG1ofsXb8yEMQbdGS3Qr"
+							}
+						],
+						"datasource": "",
+						"allowedOnHTTPGET": false,
+						"returns": {
+							"name": "result",
+							"type": "Collection",
+							"datasource": "CurrentRecip:cookingSteps"
+						},
+						"feedback": true
+					}
+				],
 				"iconPosition": "hidden",
 				"style": {
 					"display": "flex"
@@ -3552,7 +3584,7 @@
 			},
 			"isCanvas": false,
 			"props": {
-				"text": "New",
+				"text": "Add",
 				"classNames": [],
 				"events": [
 					{
@@ -3611,7 +3643,39 @@
 			"props": {
 				"text": "Delete",
 				"classNames": [],
-				"events": [],
+				"events": [
+					{
+						"type": "method",
+						"dataclass": "Recipes",
+						"events": [
+							"onclick"
+						],
+						"id": "sesWNwgXohNtrwBFccn9a9",
+						"method": "ds.Recipes.deleteCookingStep",
+						"params": [
+							{
+								"name": "step",
+								"type": "Object",
+								"datasource": "CurrentRecip:cookingStep",
+								"id": "i4WhvA5WKW6DRrvZRTF3Wc"
+							},
+							{
+								"name": "steps",
+								"type": "Collection",
+								"datasource": "CurrentRecip:cookingSteps",
+								"id": "tMDkVFTnptqJLmGiocNaqA"
+							}
+						],
+						"datasource": "",
+						"allowedOnHTTPGET": false,
+						"returns": {
+							"name": "result",
+							"type": "Collection",
+							"datasource": "CurrentRecip:cookingSteps"
+						},
+						"feedback": true
+					}
+				],
 				"iconPosition": "hidden",
 				"style": {
 					"display": "flex"
@@ -4693,7 +4757,8 @@
 								"value": "false",
 								"type": "bool"
 							}
-						}
+						},
+						"state": {}
 					},
 					{
 						"type": "simple-action",
@@ -4713,7 +4778,8 @@
 								"value": "",
 								"type": "string"
 							}
-						}
+						},
+						"state": {}
 					},
 					{
 						"type": "simple-action",
@@ -4733,7 +4799,8 @@
 								"value": "",
 								"type": "string"
 							}
-						}
+						},
+						"state": {}
 					},
 					{
 						"type": "simple-action",
@@ -4753,7 +4820,8 @@
 								"value": "",
 								"type": "string"
 							}
-						}
+						},
+						"state": {}
 					},
 					{
 						"type": "method",
@@ -4786,7 +4854,8 @@
 							"type": "entitysel",
 							"from": "",
 							"namespace": ""
-						}
+						},
+						"state": {}
 					}
 				],
 				"iterableChild": true,
@@ -5480,7 +5549,8 @@
 							"targetNamespace": "",
 							"targetType": "unknown",
 							"namespace": "CurrentRecip"
-						}
+						},
+						"state": {}
 					}
 				],
 				"iconPosition": "hidden",
@@ -5505,7 +5575,17 @@
 			"props": {
 				"text": "Cancel",
 				"classNames": [],
-				"events": [],
+				"events": [
+					{
+						"type": "dialog",
+						"id": "oUh29dCtiTcNejY8ou7VcH",
+						"events": [
+							"onclick"
+						],
+						"actionType": "close",
+						"targetDialog": "RecipInputDialog"
+					}
+				],
 				"iconPosition": "hidden",
 				"style": {
 					"display": "flex",
@@ -5824,6 +5904,67 @@
 				}
 			},
 			"parent": "7bczyaSv3G",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"FA_0ikoDDu": {
+			"type": {
+				"resolvedName": "StyleBox"
+			},
+			"isCanvas": true,
+			"props": {
+				"events": [],
+				"iterableChild": true
+			},
+			"displayName": "Stylebox",
+			"custom": {},
+			"parent": "XD1jBBEiuI",
+			"hidden": false,
+			"nodes": [
+				"B3OOWNZHUH",
+				"4oRaZUMpQY"
+			],
+			"linkedNodes": {}
+		},
+		"B3OOWNZHUH": {
+			"type": {
+				"resolvedName": "Icon"
+			},
+			"isCanvas": false,
+			"props": {
+				"classNames": [],
+				"events": [],
+				"icon": "fa-solid fa-circle-chevron-left",
+				"style": {
+					"fontSize": "20px",
+					"color": "#3b82f6ff"
+				}
+			},
+			"displayName": "Icon",
+			"custom": {},
+			"parent": "FA_0ikoDDu",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"4oRaZUMpQY": {
+			"type": {
+				"resolvedName": "Icon"
+			},
+			"isCanvas": false,
+			"props": {
+				"classNames": [],
+				"events": [],
+				"icon": "fa-solid fa-circle-chevron-right",
+				"style": {
+					"color": "#3b82f6ff",
+					"fontSize": "20px"
+				}
+			},
+			"displayName": "Icon",
+			"custom": {},
+			"parent": "FA_0ikoDDu",
 			"hidden": false,
 			"nodes": [],
 			"linkedNodes": {}
