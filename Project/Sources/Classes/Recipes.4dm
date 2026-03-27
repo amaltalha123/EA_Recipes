@@ -1,23 +1,6 @@
 Class extends DataClass
 
 
-exposed Function dropRecipeWithIngredients($recipe : cs.RecipesEntity) : Boolean
-    var $ingredients : cs.IngredientsSelection
-    var $ingredient : cs.IngredientsEntity
-    var $status : Object
-    var $ing : object
-    // Récupérer tous les ingrédients liés à la recette
-    $ingredients := ds.Ingredients.query("RecipesID == :1"; $recipe.ID)
-    
-    // Supprimer chaque ingrédient lié
-	For each ($ing; $ingredients)
-		$ing.drop()
-	End for each
-    
-    // Supprimer la recette elle-même
-    $status := $recipe.drop()
-    return $status.success
-
 // exposed Function cancelRecipe($recipe : cs.RecipesEntity)
 //     If ($recipe.ID <= 0)
         

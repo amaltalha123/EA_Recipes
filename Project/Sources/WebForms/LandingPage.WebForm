@@ -1565,7 +1565,8 @@
 				"style": {
 					"display": "flex",
 					"fontSize": "13px"
-				}
+				},
+				"disabled": false
 			},
 			"displayName": "Button",
 			"custom": {},
@@ -2374,6 +2375,11 @@
 						"label": "Soups",
 						"value": "Soups",
 						"id": "qpCmV4idwosWENuCqtyz3N"
+					},
+					{
+						"label": "Cookies & Candy",
+						"value": "Cookies & Candy",
+						"id": "6NpyVntB6R1hbb2EH8eUKe"
 					}
 				],
 				"showEmptyOption": false,
@@ -3794,6 +3800,21 @@
 							"datasource": "CurrentRecip:cookingSteps"
 						},
 						"feedback": true
+					},
+					{
+						"type": "simple-action",
+						"id": "uShLW71H8MxuEvjmEjtr9Q",
+						"events": [
+							"onclick"
+						],
+						"action": "clear",
+						"actionType": "datasource",
+						"datasource": {
+							"name": "cookingStep",
+							"type": "scalar",
+							"dataType": "object",
+							"namespace": "CurrentRecip"
+						}
 					},
 					{
 						"type": "dialog",
@@ -5790,18 +5811,16 @@
 				"events": [
 					{
 						"type": "method",
-						"dataclass": "Recipes",
+						"dataclass": "RecipesEntity",
 						"events": [
 							"onclick"
 						],
-						"id": "i5TZG1Xrr7xciR2veF3Y6C",
-						"method": "ds.Recipes.dropRecipeWithIngredients",
+						"id": "k5MhPnGtdYMZTqZiHMLrTU",
+						"method": "currentRecipe.dropRecipeWithIngredients",
 						"params": [
 							{
-								"name": "recipe",
-								"type": "cs.RecipesEntity",
 								"datasource": "$item",
-								"id": "vzddeQqQUgVT9z2rdbVAYG"
+								"id": "3dhL3JFjYiDaKrWyLKSsXR"
 							}
 						],
 						"datasource": "",
@@ -5810,7 +5829,9 @@
 							"name": "result",
 							"type": "Boolean",
 							"datasource": "deletedRecipe"
-						}
+						},
+						"feedback": true,
+						"namespace": "CurrentRecip"
 					},
 					{
 						"type": "dialog",
@@ -5820,6 +5841,24 @@
 						],
 						"actionType": "close",
 						"targetDialog": "ConfirmeRecipeDelete"
+					},
+					{
+						"type": "simple-action",
+						"id": "rE8gaSVzy9BMfZ8EVzijhH",
+						"events": [
+							"onclick"
+						],
+						"action": "refresh",
+						"actionType": "datasource",
+						"datasource": {
+							"name": "recipList",
+							"type": "entitysel",
+							"from": "",
+							"namespace": ""
+						},
+						"feedback": {
+							"enabled": false
+						}
 					}
 				],
 				"iconPosition": "hidden",

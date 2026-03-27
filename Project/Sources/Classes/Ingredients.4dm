@@ -1,5 +1,6 @@
 Class extends DataClass
 
+	
 exposed Function SaveIngredient($currentIng : cs.IngredientsEntity; $currentRecipe : cs.RecipesEntity) : cs.IngredientsSelection
     var $existing_e : cs.IngredientsEntity
     var $newIngredient_e : cs.IngredientsEntity
@@ -28,7 +29,11 @@ exposed Function SaveIngredient($currentIng : cs.IngredientsEntity; $currentReci
     End if
 
     return ds.Ingredients.query("RecipesID = :1"; $currentRecipe.ID)
-	
+
+exposed Function dropIngredient($ing: cs.IngredientsEntity; $ings: cs.IngredientsSelection) : cs.IngredientsSelection
+	var $result : cs.IngredientsSelection
+	return $result
+
 exposed Function SaveSelectedIngs($ings : Collection): Collection
 	var $o : object
 	var $result : Collection
