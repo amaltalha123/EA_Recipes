@@ -379,6 +379,22 @@
 					},
 					{
 						"type": "simple-action",
+						"id": "6VGgs7x8p8aic6wK6YPhhr",
+						"events": [
+							"onclick"
+						],
+						"action": "empty",
+						"actionType": "datasource",
+						"datasource": {
+							"name": "currentRecipe.ingredients",
+							"type": "entitysel",
+							"namespace": "CurrentRecip",
+							"from": "",
+							"dataType": "unknown"
+						}
+					},
+					{
+						"type": "simple-action",
 						"id": "nFzkjEj2ipbLVNJt8wJkwE",
 						"events": [
 							"onclick"
@@ -2911,7 +2927,7 @@
 					"borderRadius": "4px"
 				},
 				"moveable": false,
-				"placeholder": "placeholder",
+				"placeholder": "0",
 				"revealPassword": true,
 				"twentyFourHours": true,
 				"eyePosition": "right",
@@ -2989,9 +3005,89 @@
 						"id": "rGyHfiMg2Rj1Mq11fqm6HP"
 					},
 					{
-						"label": "L",
-						"value": "L",
+						"label": "liter",
+						"value": "liter",
 						"id": "hDz6GCgvncgSR7QoiUY6AJ"
+					},
+					{
+						"label": "ounce",
+						"value": "ounce",
+						"id": "aetq1Gecvx16SXeR5JP3S9"
+					},
+					{
+						"label": "cup",
+						"value": "cup",
+						"id": "tPYaBkxRUM437NgrXk3dCm"
+					},
+					{
+						"label": "pint",
+						"value": "pint",
+						"id": "vhEkpEQKev6nHEibbGf5Ef"
+					},
+					{
+						"label": "tsp",
+						"value": "tsp",
+						"id": "kY4TPvyZy9doTTCqPpsVMi"
+					},
+					{
+						"label": "tbs",
+						"value": "tbs",
+						"id": "k1bYXRMwF5garRJ32eby8N"
+					},
+					{
+						"label": "oz",
+						"value": "oz",
+						"id": "brT4hYqaeXoHeiuax3fDNc"
+					},
+					{
+						"label": "c",
+						"value": "c",
+						"id": "qep2r8Ruw6U15FfU85VMRa"
+					},
+					{
+						"label": "pt",
+						"value": "pt",
+						"id": "24yYBC2mPvhj7ptWBcaGhC"
+					},
+					{
+						"label": "qt",
+						"value": "qt",
+						"id": "4siCQ75oL3VcxgMNNYNvWg"
+					},
+					{
+						"label": "gal",
+						"value": "gal",
+						"id": "4zTy99yBQVTyFW7iFZsdGH"
+					},
+					{
+						"label": "ml",
+						"value": "ml",
+						"id": "1aX1PDXJTwmScqwkDATxds"
+					},
+					{
+						"label": "dL",
+						"value": "dL",
+						"id": "99wr6hAQv9R9TfdizkndLN"
+					},
+					{
+						"label": "lb",
+						"value": "lb",
+						"id": "u55ECqzbTPFFtDwKAU8Eab"
+					},
+					{
+						"label": "mg",
+						"value": "mg",
+						"id": "jn8eEs124HLs6aUDXMiNDW"
+					},
+					{
+						"label": "kg",
+						"value": "kg",
+						"id": "gRUySgAzQp7TXN6bm1rpvd"
+					},
+					{
+						"label": "piece(s)",
+						"value": "piece(s)",
+						"id": "i7DEMTj619oQ9u7V1BcY21"
 					}
 				],
 				"moveable": false,
@@ -3551,6 +3647,21 @@
 							"datasource": "CurrentRecip:cookingSteps"
 						},
 						"feedback": true
+					},
+					{
+						"type": "simple-action",
+						"id": "wczuqnqDF2RuK168UwE5K2",
+						"events": [
+							"onclick"
+						],
+						"action": "clear",
+						"actionType": "datasource",
+						"datasource": {
+							"name": "cookingStep",
+							"type": "scalar",
+							"dataType": "object",
+							"namespace": "CurrentRecip"
+						}
 					}
 				],
 				"iconPosition": "hidden",
@@ -4179,7 +4290,6 @@
 				"moveable": false,
 				"showEmptyOption": true,
 				"style": {
-					"backgroundColor": "#fcfeffff",
 					"borderRadius": "4px",
 					"fontSize": "12px",
 					"height": "30px"
@@ -4307,8 +4417,7 @@
 					"fontSize": "12px",
 					"color": "#6b6b6bff",
 					"borderRadius": "4px",
-					"height": "30px",
-					"backgroundColor": "#fcfeffff"
+					"height": "30px"
 				},
 				"moveable": false,
 				"options": [
